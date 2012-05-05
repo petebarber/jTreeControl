@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="treecontrol.css" type="text/css">
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+	<script src = "treecontrol.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function()
+		{
+			//makeTree("#mytree")
+
+			$(".Expand").click(function()
+			{
+				var parent = $(this).parent();
+
+				$(this).toggleClass("Expand Collaspe");
+
+				if ($(this).hasClass("Collaspe"))
+					$(">.Container", parent).css("display", "none");
+				else
+					$(">.Container", parent).css("display", "block");
+
+				//$(".Container", this).css("background", "red");
+			})
+		})
+	</script>
+</head>
+<body>
+	<dl id="mytree" class="Tree">
+		<div>
+			<dt class="Expand">One</dt>
+			<dl class="Container">
+				<dt>A</dt>
+				<div>
+					<dt class="Expand">B</dt>
+					<dl class="Container">
+						<dt>B.1</dt>
+						<dt>B.2</dt>
+						<dt>B.3</dt>
+					</dl>
+				</div>
+				<dt>C</dt>
+			</dl>
+		</div>
+		<div>
+			<dt class="Expand">Two</dt>
+		</div>
+		<div>
+			<dt class="Expand">Three</dt>
+		</div>
+	</dl>
+</body>
+</html>
