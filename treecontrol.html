@@ -23,16 +23,26 @@
 
 				//$(".Container", this).css("background", "red");
 			})
+
+			var tree2 = new TreeControl($("#tree2"), "Root");
+			var a = tree2.addNode("A");
+			var ab = a.addNode("B");
+			var abc = ab.addNode("C");
+			var a1 = tree2.addNode("A1");
+			var ab1 = a1.addNode("B1");
+			//var abc1 = ab1.addNode("C1");
 		})
 	</script>
 </head>
 <body>
+	<div id="tree2"></div>
+
 	<dl id="mytree" class="Tree">
-		<div>
+		<div class="TreeNode">
 			<dt class="Expand">One</dt>
 			<dl class="Container">
 				<dt>A</dt>
-				<div>
+				<div="TreeNode">
 					<dt class="Expand">B</dt>
 					<dl class="Container">
 						<dt>B.1</dt>
